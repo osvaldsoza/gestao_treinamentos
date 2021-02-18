@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  postgres-eventos:
+    container_name: postgres_gestao
+    image: postgres:12.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: osf77
+    ports:
+      - "5432:5432"
