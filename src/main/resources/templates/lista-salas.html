@@ -28,7 +28,7 @@
 					<li><a href="#">Lista Pessoas</a></li>
 					<li><a href="#">Cadastro Sala</a></li>
 					<li><a href="#">Lista Salas</a></li>
-					<li><a href="#">Cadastro Espaço Café</a></li>
+					<li><a href="#">Cadastro Espaço Café</a></li>			
 				</ul>
 
 			</div>
@@ -44,12 +44,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="sala : ${salas}">
-					<td th:text="${sala.nome}"></td>
-					<td th:text="${sala.lotacao}"></td>
+				<tr th:each="p : salas">
+					<td th:text="${p.nome}"></td>
+					<td th:text="${p.salas.lotacao}"></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	<script src="/js/jquery-3.5.1.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

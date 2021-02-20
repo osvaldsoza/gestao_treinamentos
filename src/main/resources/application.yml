@@ -9,3 +9,10 @@ spring:
       ddl-auto: none
   flyway:
     locations: classpath:db/migration 
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html; charset=utf-8
+    cache: false
+    prefix: classpath:/templates/

@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 <title>Insert title here</title>
 </head>
 <body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
 
+				<a class="navbar-brand" href="#">Brand</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Cadastro <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Pessoa</a></li>
+							<li><a href="#">Sala Evento</a></li>
+							<li><a href="#">Espaço Café</a></li>
+						</ul></li>
+
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Lista <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Pessoa por Sala ou Espaço</a></li>
+							<li><a href="#">Todas pessoas em uma Sala ou Espaço</a></li>
+						</ul></li>
+				</ul>
+
+
+			</div>
+		
+		</div>
+	
+	</nav>
+	<div class="container">
+		<h2>Salas</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Lotação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="p : ${salas}">
+					<td th:text="${p.nome}"></td>
+					<td th:text="${p.salas}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="/js/jquery-3.5.1.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
