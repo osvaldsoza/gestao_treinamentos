@@ -19,7 +19,7 @@ public class SalaController {
 	@GetMapping("/lista")
 	public ModelAndView lista() {
 		PessoaEspecificaDTO lista = salaServeice.retornaPessoa("Beltrano");
-		ModelAndView md = new ModelAndView("cadastro-pessoa");
+		ModelAndView md = new ModelAndView("lista-salas");
 		md.addObject("salas", lista);
 		return md;
 	}
