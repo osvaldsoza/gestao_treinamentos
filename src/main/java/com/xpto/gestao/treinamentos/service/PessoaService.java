@@ -37,16 +37,16 @@ public class PessoaService {
 		pessoaEspecificaDTO.setNome(pessoa.getNome());
 		//pessoaEspecificaDTO = (PessoaEspecificaDTO) modelMapper.createTypeMap(pessoa, PessoaEspecificaDTO.class);
 		
-		List<SalaDTO> salas = salaService.listaSalaByIdPessoa(pessoa);
-		for (SalaDTO sala : salas) {
-			pessoaEspecificaDTO.getSalas().add(sala);
-		}
+//		List<SalaDTO> salas = salaService.listaSalaByIdPessoa(pessoa);
+//		for (SalaDTO sala : salas) {
+//			pessoaEspecificaDTO.getSalas().add(sala);
+//		}
 		
-		List<EspacoCafeDTO> espacosCafes = espacoCafeService.listaEspacoCafeByIdPessoa(pessoa);
-		for (EspacoCafeDTO espacoCafe : espacosCafes) {
-			pessoaEspecificaDTO.getEspacosCafes().add(espacoCafe);
-		}
-		
+//		List<EspacoCafeDTO> espacosCafes = espacoCafeService.listaEspacoCafeByIdPessoa(pessoa);
+//		for (EspacoCafeDTO espacoCafe : espacosCafes) {
+//			pessoaEspecificaDTO.getEspacosCafes().add(espacoCafe);
+//		}
+//		
 		return pessoaEspecificaDTO;
 		
 	}

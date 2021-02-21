@@ -35,30 +35,21 @@
 							<li><a href="#">Todas pessoas em uma Sala ou Espaço</a></li>
 						</ul></li>
 				</ul>
-
-
 			</div>
-		
 		</div>
 	
 	</nav>
-	<div class="container">
-		<h2>Salas</h2>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Lotação</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="p : ${salas}">
-					<td th:text="${p.nome}"></td>
-					<td th:text="${p.salas}"></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<div class="input-field">
+                        <label>Sala de eventos</label>
+                        <select  id="select-permissoes"  name="salas" multiple="multiple" >
+                         <option value="0">- Selecione -</option>
+                           <option th:each="sala : ${salas}"
+                                th:value="${sala.id}"
+                                th:text="${sala.nome}"></option>
+                        </select>
+                    </div>
+                    
+                    
 	<script src="/js/jquery-3.5.1.js"></script>
   <script src="/js/bootstrap.min.js"></script>
 </body>
