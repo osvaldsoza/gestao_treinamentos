@@ -43,16 +43,16 @@
  <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>Nome</th>
+        <th>Salas Eventos</th>
+        <th>Espaço Café</th>
       </tr>
     </thead>
     <tbody>
       <tr th:each="sala, i : ${salas}">
         <td th:text="${sala.nome}"></td>
+        <td th:text="${sala.nomeSala}"></td>
         <td th:text="${sala.espacoCafe.nome} "></td>
-        <td th:text="${sala.salas[i.index].nome}"></td>
       </tr>
      
     </tbody>

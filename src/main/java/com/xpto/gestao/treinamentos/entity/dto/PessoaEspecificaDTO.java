@@ -25,6 +25,8 @@ public class PessoaEspecificaDTO implements Serializable {
 	private List<Sala> salas = new ArrayList<>();
 	
 	private EspacoCafe espacoCafe;
+	
+	private String nomeSala;
 
 
 }

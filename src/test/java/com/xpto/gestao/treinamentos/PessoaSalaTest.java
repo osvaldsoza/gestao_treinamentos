@@ -26,7 +26,11 @@ public class PessoaSalaTest {
 		
 		salas.add(sala);
 
+		Sala sala1 = new Sala();
+		sala1.setId(2L);
 		
+		salas.add(sala1);
+
 		
 		EspacoCafe cafe = new EspacoCafe();
 		cafe.setId(2L);

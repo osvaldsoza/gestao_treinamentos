@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.xpto.gestao.treinamentos.entity.Pessoa;
+import com.xpto.gestao.treinamentos.entity.Sala;
 import com.xpto.gestao.treinamentos.entity.dto.EspacoCafeDTO;
 import com.xpto.gestao.treinamentos.entity.dto.PessoaEspecificaDTO;
 import com.xpto.gestao.treinamentos.entity.dto.SalaDTO;
@@ -40,6 +41,19 @@ public class PessoaService {
 		pessoaEspecificaDTO.setId(pessoa.getId());
 		pessoaEspecificaDTO.setNome(pessoa.getNome());
 		pessoaEspecificaDTO.setSalas(pessoa.getSalas());
+		
+		
+		String nome = "";
+		
+		int count = 1;
+		for(Sala s : pessoa.getSalas()) {
+			nome += s.getNome();
+			if(count < pessoa.getSalas().size()){
+				nome += " - ";
+			}	
+			count++;
+		}
+		pessoaEspecificaDTO.setNomeSala(nome);
 		pessoaEspecificaDTO.setEspacoCafe(pessoa.getEspacocafe());
 		
 //		List<SalaDTO> salas = salaService.listaSalaByIdPessoa(pessoa);
