@@ -37,7 +37,7 @@ public class PessoaSalaTest {
 
 		
 	Pessoa pessoa = new Pessoa();
-	pessoa.setNome("Osaldo");
+	pessoa.setNome("Mateus");
 	pessoa.setEspacocafe(cafe);
 	pessoa.setSalas(salas);
 	repository.save(pessoa);
