@@ -8,5 +8,6 @@ import com.xpto.gestao.treinamentos.entity.Pessoa;
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	
+	public Pessoa findPessoaByNome(String nome);
 
 }

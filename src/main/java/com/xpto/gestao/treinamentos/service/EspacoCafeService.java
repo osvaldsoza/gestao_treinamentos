@@ -20,11 +20,11 @@ public class EspacoCafeService {
 	@Autowired
 	private ModelMapper modelMapper;
 	
-//	public List<EspacoCafeDTO> listaEspacoCafeByIdPessoa(Pessoa pessoa) {
-//		List<EspacoCafeDTO> lista = espacoCafeRepositoryImpl.listaEspacoCafeByIdPessoa(pessoa).stream()
-//				.map(entity -> modelMapper.map(entity, EspacoCafeDTO.class)).collect(Collectors.toList());
-//
-//		return lista;
-//	}
+	public List<EspacoCafeDTO> listaEspacoCafeByIdPessoa(Pessoa pessoa) {
+		List<EspacoCafeDTO> lista = espacoCafeRepositoryImpl.listaEspacoCafeByIdPessoa(pessoa).stream()
+				.map(entity -> modelMapper.map(entity, EspacoCafeDTO.class)).collect(Collectors.toList());
+
+		return lista;
+	}
 
 }

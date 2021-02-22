@@ -19,16 +19,14 @@ public class SalaRepositoryImpl {
 
 	public List<Sala> listaSalaByIdPessoa(Pessoa pessoa) {
 
-		
-		
-		String sqlSala = "select s.id,s.nome,s.lotacao from salaevento s\n" + 
-				"join pessoa p  on s.idpessoa = p.id \n" + 
-				"where p.id = :pessoaId" ;
-		
-		TypedQuery<Sala> typedQuerySala = (TypedQuery<Sala>) entityManager.createNativeQuery(sqlSala, Sala.class);
-		typedQuerySala.setParameter("pessoaId",  pessoa.getId());
-		List<Sala> salas = typedQuerySala.getResultList();
+		StringBuilder sqlSala = new StringBuilder();
+		sqlSala.append("select s.nome from pessoa p ").append("join pessoa_salaevento ps on ps.pessoa_id = p.id ")
+				.append("join salaevento s on s.id = ps.salaevento_id ").append("where p.nome = :pessoaId");
 
+		TypedQuery<Sala> typedQuerySala = (TypedQuery<Sala>) entityManager.createNativeQuery(sqlSala.toString(),
+				Sala.class);
+		typedQuerySala.setParameter("pessoaId", pessoa.getId());
+		List<Sala> salas = typedQuerySala.getResultList();
 
 		return salas;
 	}

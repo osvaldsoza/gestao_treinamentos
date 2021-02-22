@@ -39,16 +39,25 @@
 		</div>
 	
 	</nav>
-	<div class="input-field">
-                        <label>Sala de eventos</label>
-                        <select  id="select-permissoes"  name="salas" multiple="multiple" >
-                         <option value="0">- Selecione -</option>
-                           <option th:each="sala : ${salas}"
-                                th:value="${sala.id}"
-                                th:text="${sala.nome}"></option>
-                        </select>
-                    </div>
-                    
+	
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="sala, i : ${salas}">
+        <td th:text="${sala.nome}"></td>
+        <td th:text="${sala.espacoCafe.nome} "></td>
+        <td th:text="${sala.salas[i.index].nome}"></td>
+      </tr>
+     
+    </tbody>
+  </table>
+
                     
 	<script src="/js/jquery-3.5.1.js"></script>
   <script src="/js/bootstrap.min.js"></script>

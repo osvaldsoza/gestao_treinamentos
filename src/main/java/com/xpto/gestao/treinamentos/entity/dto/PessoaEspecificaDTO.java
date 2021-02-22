@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.xpto.gestao.treinamentos.entity.EspacoCafe;
+import com.xpto.gestao.treinamentos.entity.Sala;
+
 import lombok.Data;
 
 @Data
@@ -19,8 +22,9 @@ public class PessoaEspecificaDTO implements Serializable {
 	
 	private String nome;
 	
-	private List<SalaDTO> salas = new ArrayList<>();
+	private List<Sala> salas = new ArrayList<>();
 	
-	private List<EspacoCafeDTO> espacosCafes = new ArrayList<>();
+	private EspacoCafe espacoCafe;
+
 
 }

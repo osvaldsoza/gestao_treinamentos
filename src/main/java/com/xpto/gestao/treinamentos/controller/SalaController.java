@@ -18,11 +18,11 @@ import com.xpto.gestao.treinamentos.service.SalaService;
 public class SalaController {
 	
 	@Autowired
-	private SalaService salaServeice;
+	private PessoaService salaServeice;
 	
 	@GetMapping("/lista")
 	public ModelAndView lista() {
-		List<SalaDTO> listaEvento = salaServeice.lista();
+		PessoaEspecificaDTO listaEvento = salaServeice.retornaPessoa("Mateus");
 		ModelAndView md = new ModelAndView("lista-salas");
 		md.addObject("salas", listaEvento);
 		return md;

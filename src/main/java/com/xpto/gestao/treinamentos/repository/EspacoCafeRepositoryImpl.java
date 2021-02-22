@@ -19,13 +19,16 @@ public class EspacoCafeRepositoryImpl {
 
 	public List<EspacoCafe> listaEspacoCafeByIdPessoa(Pessoa pessoa) {
 
-		String sqlCafe = "select e.id,e.nome,e.lotacao from espacocafe e\n" + "join pessoa p on e.idpessoa = p.id \n"
-				+ "where p.id = :pessoaId";
+		StringBuilder sqlCafe = new StringBuilder()
+		       .append("select e.nome from pessoa p ")
+		       .append("join pessoa_espacocafe pe on pe.pessoa_id = p.id ")
+			   .append("join espacocafe e on e.id = pe.espacocafe_id ")
+			   .append("where p.nome = :pessoaId");
 
-		TypedQuery<EspacoCafe> typedQueryCafe = (TypedQuery<EspacoCafe>) entityManager.createNativeQuery(sqlCafe,
+		TypedQuery<EspacoCafe> typedQueryCafe = (TypedQuery<EspacoCafe>) entityManager.createNativeQuery(sqlCafe.toString(),
 				EspacoCafe.class);
 		typedQueryCafe.setParameter("pessoaId", pessoa.getId());
-		
+
 		List<EspacoCafe> espacos = typedQueryCafe.getResultList();
 
 		return espacos;

@@ -32,11 +32,11 @@ public class SalaService {
 		return lista;
 	}
 
-//	public List<SalaDTO> listaSalaByIdPessoa(Pessoa pessoa) {
-//		List<SalaDTO> lista = salaRepositoryImpl.listaSalaByIdPessoa(pessoa).stream()
-//				.map(entity -> modelMapper.map(entity, SalaDTO.class)).collect(Collectors.toList());
-//
-//		return lista;
-//	}
+	public List<SalaDTO> listaSalaByIdPessoa(Pessoa pessoa) {
+		List<SalaDTO> lista = salaRepositoryImpl.listaSalaByIdPessoa(pessoa).stream()
+				.map(entity -> modelMapper.map(entity, SalaDTO.class)).collect(Collectors.toList());
+
+		return lista;
+	}
 
 }
