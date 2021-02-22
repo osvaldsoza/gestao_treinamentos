@@ -41,33 +41,23 @@ public class PessoaService {
 		pessoaEspecificaDTO.setId(pessoa.getId());
 		pessoaEspecificaDTO.setNome(pessoa.getNome());
 		pessoaEspecificaDTO.setSalas(pessoa.getSalas());
-		
+		pessoaEspecificaDTO.setEspacoCafe(pessoa.getEspacocafe());
 		
 		String nome = "";
 		
 		int count = 1;
+		
 		for(Sala s : pessoa.getSalas()) {
 			nome += s.getNome();
 			if(count < pessoa.getSalas().size()){
-				nome += " - ";
+				nome += " / ";
 			}	
 			count++;
 		}
-		pessoaEspecificaDTO.setNomeSala(nome);
-		pessoaEspecificaDTO.setEspacoCafe(pessoa.getEspacocafe());
 		
-//		List<SalaDTO> salas = salaService.listaSalaByIdPessoa(pessoa);
-//		for (SalaDTO sala : salas) {
-//			pessoaEspecificaDTO.getSalas().add(sala);
-//		}
-//		
-//		List<EspacoCafeDTO> espacosCafes = espacoCafeService.listaEspacoCafeByIdPessoa(pessoa);
-//		for (EspacoCafeDTO espacoCafe : espacosCafes) {
-//			pessoaEspecificaDTO.getEspacosCafes().add(espacoCafe);
-//		}
+		pessoaEspecificaDTO.setNomeSala(nome);
 		
 		return pessoaEspecificaDTO;
-		
 	}
 }
 
